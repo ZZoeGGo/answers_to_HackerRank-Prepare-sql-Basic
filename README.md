@@ -40,3 +40,20 @@ WHERE CITY NOT REGEXP "^[A,E,I,O,U].*[A,E,I,O,U]$"
 SELECT DISTINCT CITY
 FROM STATION
 WHERE CITY REGEXP "^[^A,E,I,O,U].*[^A,E,I,O,U]$"
+
+### Students Performance: Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. 
+If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+
+SELECT NAME 
+FROM STUDENTS 
+WHERE MARKS > 75 
+ORDER BY RIGHT(NAME, 3), ID ASC;
+
+### Combine two dataset:left join
+select FirstName, LastName,City, State
+from Person left join Address
+on Person.PersonID = Address.PersonID
+;
+
+
+
